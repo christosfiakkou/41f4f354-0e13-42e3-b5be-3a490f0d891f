@@ -1,0 +1,13 @@
+<h2>Photos Stream</h2>
+
+<div class="grid">
+  <ng-container *ngFor="let url of photos">
+    <app-photo-card
+      [src]="url"
+      [isFavorite]="favSvc.isFavorite(url)"
+      (favoriteToggle)="toggleFavorite(url)"
+    ></app-photo-card>
+  </ng-container>
+</div>
+
+<mat-spinner *ngIf="loading" class="spinner"></mat-spinner>

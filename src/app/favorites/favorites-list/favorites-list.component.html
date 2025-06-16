@@ -1,0 +1,7 @@
+<h2>Favorites Stream</h2>
+
+<div class="grid">
+  <ng-container *ngFor="let url of favorites">
+    <app-photo-card [src]="url" (click)="openDetail(url)"> </app-photo-card>
+  </ng-container>
+</div>

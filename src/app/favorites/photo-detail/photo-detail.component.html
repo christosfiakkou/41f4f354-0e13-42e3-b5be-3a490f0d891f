@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <button mat-button (click)="goBack()">Back</button>
+</mat-toolbar>
+<div class="detailed-container">
+  <img [src]="url" alt="Favorites" />
+  <button mat-raised-button color="warn" (click)="remove()">
+    Remove from favorites
+  </button>
+</div>
