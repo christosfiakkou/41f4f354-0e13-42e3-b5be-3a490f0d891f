@@ -1,13 +1,22 @@
+<!-- Section title -->
 <h2>Photos Stream</h2>
 
+<!-- Grid container for photo cards -->
 <div class="grid">
+
+  <!-- Loop through each photo URL and render a photo card -->
+     <!-- Image source -->
+      <!-- Binding to favorite status -->
+       <!-- Handle toggle -->
   <ng-container *ngFor="let url of photos">
     <app-photo-card
-      [src]="url"
-      [isFavorite]="favSvc.isFavorite(url)"
-      (favoriteToggle)="toggleFavorite(url)"
+      [src]="url"                             
+      [isFavorite]="favSvc.isFavorite(url)"     
+      (favoriteToggle)="toggleFavorite(url)"    
     ></app-photo-card>
   </ng-container>
+
 </div>
 
+<!-- Show loading spinner while fetching photos -->
 <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>

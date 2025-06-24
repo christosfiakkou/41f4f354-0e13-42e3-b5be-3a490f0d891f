@@ -1,19 +1,28 @@
-// src/app/app.module.ts
-import { NgModule }             from '@angular/core';
-import { BrowserModule }        from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule }     from './app-routing.module';
-import { AppComponent }         from './app.component';
-import { SharedModule }         from './shared/shared.module'; // ← add this
-
+/**
+ * AppModule
+ * ---------
+ * The root module of the Angular application.
+ * Declares the root AppComponent and sets up global imports.
+ *
+ * Includes:
+ *   - BrowserModule: Required for running the app in the browser
+ *   - BrowserAnimationsModule: Enables Angular Material animations
+ *   - AppRoutingModule: Routing config for the main application
+ *   - SharedModule: Includes reusable UI like HeaderComponent
+ *
+ * Bootstrap:
+ *   - AppComponent: The top-level component that hosts the router outlet
+ */
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule            // ← now <app-header> is known here
+    SharedModule
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

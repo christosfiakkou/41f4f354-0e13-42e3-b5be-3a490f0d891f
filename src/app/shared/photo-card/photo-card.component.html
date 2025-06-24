@@ -1,12 +1,21 @@
+<!--
+  Displays a photo with a toggleable "favorite" button.
+  Uses Angular Material's <mat-card> and <mat-icon-button>.
+-->
 <mat-card class="photo-card">
+
+  <!-- Image inside the card; bound to the input property 'src' -->
   <img mat-card-image [src]="src" alt="Photo" />
+
+  <!-- Favorite toggle button -->
   <button
     mat-icon-button
     class="fav-btn"
-    (click)="favoriteToggle.emit()"
-    [color]="isFavorite ? 'warn' : ''"
+    (click)="favoriteToggle.emit()"   
+    [color]="isFavorite ? 'warn' : ''" 
     aria-label="Toggle favorite"
   >
+    <!-- Show filled or outlined heart based on isFavorite -->
     <mat-icon>{{ isFavorite ? "favorite" : "favorite_border" }}</mat-icon>
   </button>
 </mat-card>

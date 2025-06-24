@@ -1,15 +1,17 @@
-// src/app/shared/shared.module.ts
-import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
-import { RouterModule }         from '@angular/router';
-import { MatCardModule }        from '@angular/material/card';
-import { MatIconModule }        from '@angular/material/icon';      // ← add this
-import { MatButtonModule }      from '@angular/material/button';
-import { MatToolbarModule }     from '@angular/material/toolbar';
-
-import { HeaderComponent }      from './header/header.component';
-import { PhotoCardComponent }   from './photo-card/photo-card.component';
-
+/**
+ * SharedModule
+ * ------------
+ * This module contains reusable components and Angular Material imports
+ * shared across the application.
+ *
+ * Components:
+ *   - HeaderComponent: App header using mat-toolbar
+ *   - PhotoCardComponent: Reusable photo display card with favorite toggle
+ *
+ * Why SharedModule?
+ * - Centralizes shared UI and layout components
+ * - Avoids duplicate declarations/imports across feature modules
+ */
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -19,14 +21,14 @@ import { PhotoCardComponent }   from './photo-card/photo-card.component';
     CommonModule,
     RouterModule,
     MatCardModule,
-    MatIconModule,        // ← add this
+    MatIconModule,       // Required for <mat-icon>
     MatButtonModule,
     MatToolbarModule
   ],
   exports: [
-    HeaderComponent,
-    PhotoCardComponent,
-    MatIconModule         // ← also export if you use mat-icon elsewhere
+    HeaderComponent,     // Reusable in AppComponent
+    PhotoCardComponent,  // Used in PhotoListComponent
+    MatIconModule        // Export if <mat-icon> is used in other modules
   ]
 })
 export class SharedModule {}

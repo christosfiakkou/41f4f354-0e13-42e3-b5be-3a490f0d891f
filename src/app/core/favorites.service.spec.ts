@@ -1,3 +1,22 @@
+/**
+ * Unit tests for FavoritesService
+ * -------------------------------
+ * This test suite ensures that FavoritesService handles:
+ * - Adding photo URLs to favorites
+ * - Preventing duplicates
+ * - Removing photo URLs
+ * - Reading from localStorage
+ * - Correctly reporting favorite status
+ *
+ * Why this test is useful:
+ * - Guarantees that user favorites are stored and retrieved correctly from localStorage.
+ * - Ensures data integrity (no duplicates, deletions work).
+ * - Confirms `isFavorite()` provides correct boolean output.
+ *
+ * Test Isolation:
+ * - localStorage is cleared in `beforeEach` to ensure tests run independently.
+ */
+
 import { TestBed } from '@angular/core/testing';
 
 import { FavoritesService } from './favorites.service';

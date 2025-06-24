@@ -1,8 +1,14 @@
+<!-- Top toolbar with a back button -->
 <mat-toolbar color="primary">
   <button mat-button (click)="goBack()">Back</button>
 </mat-toolbar>
+
+<!-- Photo display section -->
 <div class="detailed-container">
+  <!-- Full-size photo preview -->
   <img [src]="url" alt="Favorites" />
+
+  <!-- Button to remove from favorites -->
   <button mat-raised-button color="warn" (click)="remove()">
     Remove from favorites
   </button>
